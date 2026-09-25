@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "titulo": "La inteligencia artificial redefine la educación",
+        "categoria": "Inteligencia Artificial",
+        "imagen": "img/IAimage.png",
+        "descripcion": "Cómo la IA está personalizando el aprendizaje, mejorando resultados y abriendo nuevas oportunidades para estudiantes y docentes.",
+        "destacada": true
+    },
+
+    {
+        "id": 2,
+        "titulo": "El futuro de la computación cuántica",
+        "categoria": "Computación Cuántica",
+        "imagen": "img/PC.png",
+        "descripcion": "Descubra cómo la computación cuántica está revolucionando el panorama tecnológico y sus posibles aplicaciones en el futuro.",
+        "destacada": true
+    },
+
+    {
+        "id": 3,
+        "titulo": "Ciberseguridad en la era digital",
+        "categoria": "Ciberseguridad",
+        "imagen": "img/CLOUD.png",
+        "descripcion": "La importancia de proteger nuestros datos y cómo las empresas están implementando nuevas estrategias para combatir las amenazas cibernéticas.",
+        "destacada": true
+    },
+
+     {
+        "id": 4,
+        "titulo": "Test Secretaria General Consejo de Estado",
+        "categoria": "Trabajo",
+        "imagen": "img/Techjustice.png",
+        "descripcion": "La importancia de proteger nuestros datos y cómo las empresas están implementando nuevas estrategias para combatir las amenazas cibernéticas.",
+        "destacada": true
+    },
+
+     {
+        "id": 5,
+        "titulo": "Tasadsad",
+        "categoria": "Trabajo",
+        "imagen": "img/images.jpg",
+        "descripcion": "adsadsads.",
+        "destacada": true
+    }
+]
