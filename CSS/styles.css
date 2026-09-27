@@ -6,7 +6,7 @@ body{
     margin: 0;
     font-family: Arial, sans-serif;
 }
-/* Header Styles */
+/* Header estilo */
 .header{
     background-color: #020817;
     display: flex;
@@ -15,7 +15,7 @@ body{
     padding: 20px 50px;
 }
 
-/* Logo Styles */
+/* Logo estilo */
 .logo span{
     color: #22c7f0;
 }
@@ -26,7 +26,7 @@ body{
     font-weight: bold;
 }
 
-/* Navigation Styles */
+/* Navigation estilos */
 nav ul{
     display: flex;
     list-style: none;
@@ -68,7 +68,7 @@ nav a.active{
     color: #020817;
 }
 
-/* Main Section Styles */
+/* Main Section estilos*/
 .hero{
     background: url('../img/Background-hero.png');
     background-size: cover;
@@ -83,21 +83,21 @@ nav a.active{
     max-width: 550px;
 }
 
-/* hero title */
+/* hero titulo */
 .hero h1{
     color: #fff;
     font-size: 48px;
     margin:0 0 20px 0;
 }
 
-/* hero description */
+/* hero descripcion */
 .hero p{
     color: #fff;
     font-size: 16px;
     margin-bottom: 25px;
 }
 
-/* hero button */
+/* boton hero */
 .hero-button{
     display: inline-block;
     background-color: #22c7f0;
@@ -144,7 +144,7 @@ nav a.active{
     padding: 20px;
 }
 
-/*category styles*/
+/*categoria estilos*/
 .category{
     display:inline-block;
     background-color: #7b2cbf;
@@ -179,7 +179,7 @@ nav a.active{
     text-decoration: underline;
 }
 
-/* Favorite Button Styles */
+/* boton favoritos estilo*/
 .news-image {
     position: relative;
 }
@@ -197,14 +197,13 @@ nav a.active{
     cursor: pointer;
 }
 
-/* container Styles */
 .news-container{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
     gap: 25px;
 }
 
-/* newsletter Styles */
+/* newsletter estilos */
 .newsletter{
     margin: 35px 50px;
     padding: 25px 45px;
@@ -334,7 +333,7 @@ nav a.active{
 /*estilos Todas las noticias*/
 
 
-/*Todas las noticias banner*/
+/*Todas las noticias estilos*/
 
 .news-hero {
     background-color: #020817;
@@ -505,3 +504,127 @@ nav a.active{
     color: white;
     border-color: #22c7f0;
 }
+
+.footer-simple{
+    background-color: #07152e;
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+}
+
+.footer-simple p{
+    margin: 0;
+    font-size: 14px;
+}
+
+/*detalle noticia*/
+.detail-page{
+    background-color: white;
+}
+
+.detail-layout {
+    display: grid;
+    grid-template-columns: 2fr 0.8fr;
+    gap: 40px;
+    padding: 45px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.article-detail {
+    min-width: 0;
+}
+
+.breadcrumb {
+    color: #64748b;
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+.detail-category{
+    display: inline-block;
+    color: #22bfe8;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.article-detail h1{
+    color: #07152e;
+    font-size: 46px;
+    line-height: 1.05;
+    margin: 5px 0 14px 0;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.detail-main-image {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.article-detail p {
+    color: #1e293b;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.article-detail h2 {
+    color: #07152e;
+    font-size: 20px;
+    margin: 18px 0 6px;
+}
+
+.detail-sidebar {
+    min-width: 0;
+}
+
+.article-actions {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.article-actions button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 18px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #07152e;
+    cursor: pointer;
+}
+
+.article-actions button:last-child {
+    border-bottom: none;
+}
+
+.article-actions button:hover {
+    background-color: #f8fafc;
+    color: #22bfe8;
+}
+
+.related-news h2 {
+    color: #07152e;
+    font-size: 20px;
+    margin: 0 0 15px 0;
+}
+

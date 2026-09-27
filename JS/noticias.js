@@ -9,6 +9,15 @@ const botonesFiltro =
 
 let categoriaSeleccionada = "Todas";
 
+const paginacion =
+    document.getElementById("pagination");
+
+let paginaActual = 1;
+
+const noticiasPorPagina = 8;
+
+
+
 function mostrarNoticias(listaNoticias){
 
     contenedor.innerHTML ="";
@@ -52,7 +61,7 @@ function mostrarNoticias(listaNoticias){
                         ♡
                     </button>
 
-                    <a href="#" class="read-more">Leer más</a>
+                    <a href="detalle.html?id=${noticia.id}" class="read-more">Leer más</a>
 
                 </div>
 
@@ -96,24 +105,123 @@ function aplicarfiltros (noticias){
             return (coincideCategoria && coincideBusqueda);
         });
 
-    mostrarNoticias(noticiasFiltradas);  
+    paginaActual = 1;
+
+    actualizarVista(noticiasFiltradas);
 
 }
 
-fetch("data/noticias.json")
+function mostrarPagina(listaNoticias) {
+    
+    const inicio =
+        (paginaActual -1)* noticiasPorPagina;
+    
+    const fin =
+        inicio + noticiasPorPagina;
+
+    const noticiasPagina =
+        listaNoticias.slice(inicio,fin);
+
+    mostrarNoticias(noticiasPagina);
+}
+
+function crearPaginacion(listaNoticias){
+    
+    paginacion.innerHTML="";
+
+    const totalPaginas =
+        Math.ceil(
+            listaNoticias.length /
+            noticiasPorPagina
+        );
+    
+    const botonAnterior = 
+        document.createElement("button");
+        botonAnterior.textContent = "<";
+
+        if(paginaActual == 1){
+
+            botonAnterior.disabled = true;
+        }
+
+        botonAnterior.addEventListener("click", () => {
+        
+            paginaActual--;
+            actualizarVista(listaNoticias);
+
+        });
+
+        paginacion.appendChild(botonAnterior);
+
+    for(
+        let pagina = 1;
+        pagina <= totalPaginas;
+        pagina++
+    )
+    {
+        const boton = document.createElement("button");
+
+        boton.textContent = pagina;
+
+        boton.dataset.page = pagina;
+
+        if(pagina === paginaActual){
+
+            boton.classList.add("active");
+        }
+
+        boton.addEventListener("click", () => {
+
+            paginaActual = pagina;
+
+            mostrarPagina(listaNoticias);
+
+            crearPaginacion(listaNoticias);
+
+        });
+
+        paginacion.appendChild(boton);
+    }
+
+    const botonDespues =
+        document.createElement("button");
+        botonDespues.textContent = ">";
+
+    if(paginaActual === totalPaginas){
+        botonDespues.disabled = true;
+    }
+
+    botonDespues.addEventListener("click", () => {
+
+        paginaActual++;
+        actualizarVista(listaNoticias);
+    });
+
+    paginacion.appendChild(botonDespues);
+    
+}
+
+function actualizarVista(listaNoticias){
+    
+    mostrarPagina(listaNoticias);
+
+    crearPaginacion(listaNoticias);
+}
+
+fetch("data/noticias_30_detalle.json")
     .then(respuesta => respuesta.json())
     .then(noticias =>{
 
-        mostrarNoticias(noticias);
+        actualizarVista(noticias);
 
         buscador.addEventListener("input", () => {
 
-            aplicarfiltros(noticias);
+        aplicarfiltros(noticias);
 
     });
 
     botonesFiltro.forEach(boton => {
-        
+
         boton.addEventListener("click", () =>{
 
              categoriaSeleccionada =

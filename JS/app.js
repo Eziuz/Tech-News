@@ -1,12 +1,19 @@
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
-fetch('/data/noticias.json')
+fetch('/data/noticias_30_detalle.json')
     .then(respuesta => respuesta.json())
     .then(noticias => {
+    
     const contenedor =
     document.getElementById("news-container");
 
-    noticias.forEach(noticia => {
+    noticiasDestacadas = noticias.filter( noticia => {
+
+        return noticia.destacada === true;
+
+    });
+
+    noticiasDestacadas.forEach(noticia => {
 
     const iconoFavorito = favoritos.includes(noticia.id) ? "♥" : "♡";
 
@@ -27,7 +34,7 @@ fetch('/data/noticias.json')
                     <p>
                         ${noticia.descripcion}
                     </p>
-                    <a href="#" class="read-more">Ver más → </a>
+                    <a href="detalle.html?id=${noticia.id}" class="read-more">Ver más → </a>
             </div>
         </article>
         `; contenedor.innerHTML += tarjeta;
