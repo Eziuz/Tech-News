@@ -1,3 +1,5 @@
+let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
 fetch('/data/noticias.json')
     .then(respuesta => respuesta.json())
     .then(noticias => {
@@ -5,6 +7,9 @@ fetch('/data/noticias.json')
     document.getElementById("news-container");
 
     noticias.forEach(noticia => {
+
+    const iconoFavorito = favoritos.includes(noticia.id) ? "♥" : "♡";
+
     const tarjeta = `
         <article class="news-card">
                         
@@ -12,9 +17,7 @@ fetch('/data/noticias.json')
 
                 <img src="${noticia.imagen}" alt="${noticia.titulo}">
                          
-                    <button class="favorite-button">
-                        ♡
-                    </button>
+                    <button class="favorite-button" data-id="${noticia.id}">${iconoFavorito}</button>
             </div>
             <div class="news-content">
                 <span class="category"> ${noticia.categoria} </span>
@@ -35,11 +38,18 @@ fetch('/data/noticias.json')
     botonesfavoritos.forEach(boton => {
         boton.addEventListener("click", () => {
 
-            if (boton.textContent === "♡") {
-                boton.textContent = "♥️";
-            } else {
+            const id = Number(boton.dataset.id);
+
+            if(favoritos.includes(id)){
+                favoritos = favoritos.filter(
+                    favoritoId => favoritoId !== id
+                );
                 boton.textContent = "♡";
+            } else {
+                favoritos.push(id);
+                boton.textContent = "♥";
             }
+            localStorage.setItem("favoritos", JSON.stringify(favoritos));
         });
     })
 });

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todas las noticias</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <script src="/JS/noticias.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            Tech <span>News</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li> <a href="index.html">Inicio</a> </li>
+                <li> <a href="noticias.html" class="active">Noticias</a></li>
+                <li> <a href="#">Favoritos</a></li>
+                <li> <a href="#">Contacto</a> </li>
+            </ul>
+        </nav>
+
+        <a href="#" class="explore-button">Explorar noticias</a>
+    </header>
+
+    <section class="news-hero">
+
+            <h1>
+                Todas las noticias
+            </h1>
+
+            <p>
+                Explora información sobre innovación,
+                ciencia y tecnología.
+            </p>
+
+    </section>
+
+    <section class="all-news">
+
+        <div class="news-tools">
+
+            <div class="search-box">
+
+                <input type="text" id="search-input" placeholder="🔍 Buscar noticias">
+                <button type="button" id="search-button">🔍</button>
+
+            </div>
+
+            <div class="category-filters">
+
+                <button class="filter-button active" data-category="Todas">Todas</button>
+                <button class="filter-button" data-category="Tecnologia">Tecnología</button>
+                <button class="filter-button" data-category="Educacion">Educación</button>
+                <button class="filter-button" data-category="Ciencia">Ciencia</button>
+                <button class="filter-button" data-category="Tendencias">Tendencias</button>
+
+            </div>
+
+        </div>
+        
+        <div class="all-news-container" id="all-news-container">
+
+        </div>
+
+        <div class="pagination">
+
+            <button><</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>></button>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
