@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <script src="js/contacto.js" defer></script>
+    <title>Formulario de contacto</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            Tech <span>News</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li> <a href="index.html">Inicio</a> </li>
+                <li> <a href="noticias.html">Noticias</a></li>
+                <li> <a href="favoritos.html">Favoritos</a></li>
+                <li> <a href="#" class="active">Contacto</a> </li>
+            </ul>
+        </nav>
+
+        <a href="#" class="explore-button">Explorar noticias</a>
+    </header>
+    <main class="contact-page">
+        <section class="contact-intro">
+
+            <h1>
+               Hablemos de tecnologia
+            </h1>
+
+            <p>
+                Tienes una pregunta, sugerencia o quieres compartir una noticia? Escribenos.
+            </p>
+
+        </section>
+
+        <section class="contact-layout">
+
+            <div class="contact-form-card">
+
+                <h2>
+                    Envíanos un mensaje
+                </h2>
+
+                <form id="contact-form">
+                
+                    <div class="form-group">
+
+                        <label for="nombre">
+                            Nombre completo *
+                        </label>
+
+                        <input type="text" id="nombre" placeholder="Escribe tu nombre completo">
+
+                        <p class="error-message" id="error-nombre"></p>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="correo">
+                            Correo electronico *
+                        </label>
+
+                        <input type="text" id="correo" placeholder="ejemplo@correo.com">
+
+                        <p class="error-message" id="error-correo"></p>
+
+                    </div>
+
+                    
+                    <div class="form-group">
+
+                        <label for="asunto">
+                            Asunto *
+                        </label>
+
+                        <input type="text" id="asunto" placeholder="Escribe el asunto de tu mensaje">
+
+                        <p class="error-message" id="error-asunto"></p>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="mensaje">
+                            Mensaje *
+                        </label>
+
+                        <input type="text" id="mensaje" placeholder="Escribe tu mensaje">
+
+                        <p class="error-message" id="error-mensaje"></p>
+
+                    </div>
+
+                    <div class="form-check">
+
+                        <input type="checkbox" id="datos">
+
+                        <label for="datos">
+                            Acepto el tratamiento de mis datos
+                        </label>
+
+                        <p class="error-message" id="error-datos"></p>
+                    </div>
+
+                    <button type="submit" class="contact-submit"> Enviar mensaje </button>
+
+                </form>
+
+            </div>
+
+            <aside class="contact-info">
+
+                <h2>
+                    Información de contacto
+                </h2>
+
+                <div class="contact-info-item">
+
+                    <h3>
+                        Correo electronico
+                    </h3>
+
+                    <p>
+                        hola@technews.com
+                    </p>
+
+                </div>
+
+                <div class="contact-info-item">
+
+                    <h3>
+                        Horario de atención
+                    </h3>
+
+                    <p>
+                        Lunes a viernes,
+                        <br>
+                        8:00 a.m. - 5:00 p.m.
+                    </p>
+
+                </div>
+
+                <div class="contact-info-item">
+
+                    <h3>
+                        Síguenos
+                    </h3>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+        <p class="success-message" id="success-message"></p>
+    </main>
+     <footer class="contact-footer">
+        <div class="footer-bottom">
+            ©2026 TechNews
+        </div>
+    </footer>
+</body>
+</html>

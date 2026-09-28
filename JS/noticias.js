@@ -14,6 +14,9 @@ const paginacion =
 
 let paginaActual = 1;
 
+let favoritos =
+    (JSON.parse(localStorage.getItem("favoritos")) || []).map(Number);
+
 const noticiasPorPagina = 8;
 
 
@@ -57,8 +60,8 @@ function mostrarNoticias(listaNoticias){
 
                 <div class="news-card-footer">
 
-                    <button class="favorite-button list-favorite" data-id="${noticia.id}">
-                        ♡
+                    <button class="favorite-button list-favorite ${favoritos.includes(noticia.id) ? "active" : ""}" data-id="${noticia.id}">
+                        ${favoritos.includes(noticia.id) ? "♥" : "♡"}
                     </button>
 
                     <a href="detalle.html?id=${noticia.id}" class="read-more">Leer más</a>
@@ -207,6 +210,51 @@ function actualizarVista(listaNoticias){
 
     crearPaginacion(listaNoticias);
 }
+
+contenedor.addEventListener("click", event => {
+
+    const boton =
+        event.target.closest(".favorite-button");
+
+
+    if (!boton) {
+        return;
+    }
+
+
+    const id =
+        Number(boton.dataset.id);
+
+
+    if (favoritos.includes(id)) {
+
+        favoritos =
+            favoritos.filter(idFavorito =>
+                idFavorito !== id
+            );
+
+
+        boton.textContent = "♡";
+
+        boton.classList.remove("active");
+
+    } else {
+
+        favoritos.push(id);
+
+        boton.textContent = "♥";
+
+        boton.classList.add("active");
+
+    }
+
+
+    localStorage.setItem(
+        "favoritos",
+        JSON.stringify(favoritos)
+    );
+
+});
 
 fetch("data/noticias_30_detalle.json")
     .then(respuesta => respuesta.json())
