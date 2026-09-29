@@ -1,6 +1,6 @@
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
-fetch('/data/noticias_30_detalle.json')
+fetch("data/noticias_30_detalle.json")
     .then(respuesta => respuesta.json())
     .then(noticias => {
     
