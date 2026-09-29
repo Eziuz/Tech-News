@@ -7,6 +7,73 @@ const idNoticia =
 const articulo =
     document.getElementById("article-detail");
 
+const contenedorRelacionadas =
+    document.getElementById("related-news-container");
+
+function mostrarNoticiasRelacionadas(
+    noticias,
+    noticiaSeleccionada
+) {
+
+    const relacionadas =
+        noticias.filter(noticia =>
+            noticia.categoria === noticiaSeleccionada.categoria &&
+            noticia.id !== noticiaSeleccionada.id
+        );
+
+    const relacionadasLimitadas =
+    relacionadas.slice(0, 3);
+        contenedorRelacionadas.innerHTML = "";
+
+
+    relacionadasLimitadas.forEach(noticia => {
+
+        const tarjetaRelacionada = `
+
+            <article class="related-card">
+
+                <img
+                    src="${noticia.imagen}"
+                    alt="${noticia.titulo}"
+                >
+
+
+                <div class="related-card-meta">
+
+                    <span class="related-category">
+                        ${noticia.categoria}
+                    </span>
+
+                    <span class="related-date">
+                        ${noticia.fecha}
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="detalle.html?id=${noticia.id}"
+                    class="related-title"
+                >
+                    ${noticia.titulo}
+                </a>
+
+            </article>
+
+        `;
+
+
+        contenedorRelacionadas.innerHTML +=
+
+        tarjetaRelacionada;
+
+    });
+}
+
+
+
+
+
 fetch("data/noticias_30_detalle.json")
     .then(respuesta => respuesta.json())
     .then (noticias => {
@@ -93,4 +160,5 @@ fetch("data/noticias_30_detalle.json")
 
         `;
 
+        mostrarNoticiasRelacionadas(noticias,noticiaSeleccionada);
     });

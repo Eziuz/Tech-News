@@ -424,7 +424,7 @@ nav a.active{
 .all-news-image img {
     display: block;
     width: 100%;
-    height: 250px;
+    height: 240px;
     object-fit: cover;
 }
 
@@ -558,6 +558,7 @@ nav a.active{
     margin: 5px 0 14px 0;
 }
 
+
 .article-meta {
     display: flex;
     align-items: center;
@@ -580,6 +581,7 @@ nav a.active{
     color: #1e293b;
     font-size: 15px;
     line-height: 1.6;
+    text-align: justify;
 }
 
 .article-detail h2 {
@@ -621,6 +623,66 @@ nav a.active{
 
 .article-actions button:hover {
     background-color: #f8fafc;
+    color: #22bfe8;
+}
+
+#related-news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.related-card img {
+    display: block;
+
+    width: 100%;
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+}
+
+.related-card-meta {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.related-category {
+    color: #22bfe8;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.related-date {
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+.related-title {
+    display: block;
+
+    color: #07152e;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    line-height: 1.4;
+
+    text-decoration: none;
+}
+
+.related-title:hover {
     color: #22bfe8;
 }
 
