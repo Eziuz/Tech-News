@@ -17,7 +17,7 @@ let paginaActual = 1;
 let favoritos =
     (JSON.parse(localStorage.getItem("favoritos")) || []).map(Number);
 
-const noticiasPorPagina = 8;
+const noticiasPorPagina = 6;
 
 
 

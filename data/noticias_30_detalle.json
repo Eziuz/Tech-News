@@ -6,7 +6,7 @@
         "imagen": "img/cardimg12.png",
         "descripcion": "Nuevas soluciones digitales combinan automatizacion, datos y herramientas inteligentes para mejorar tareas cotidianas.",
         "fecha": "27/09/2026",
-        "destacada": true,
+        "destacada": false,
         "autor": "Redaccion TechNews",
         "contenido": [
             {
@@ -230,7 +230,7 @@
         "imagen": "img/cardimg1.png",
         "descripcion": "Las soluciones en la nube permiten escalar servicios, compartir recursos y reducir costos.",
         "fecha": "19/09/2026",
-        "destacada": true,
+        "destacada": false,
         "autor": "Sofia Herrera",
         "contenido": [
             {
@@ -566,7 +566,7 @@
         "imagen": "img/cardimg12.png",
         "descripcion": "La automatizacion permite reducir tareas repetitivas y optimizar procesos en distintos sectores.",
         "fecha": "07/09/2026",
-        "destacada": true,
+        "destacada": false,
         "autor": "Redaccion TechNews",
         "contenido": [
             {
